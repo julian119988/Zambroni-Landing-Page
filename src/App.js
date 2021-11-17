@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
-import Navbar from "./Components/Navbar/Navbar";
 import { lang, LangContext } from "./lang";
 import { createGlobalStyle } from "styled-components";
+import Navbar from "./Components/Navbar/Navbar";
+import FirstSection from "./Components/FirstSection/FirstSection";
 
 const GlobalStyles = createGlobalStyle`
   html,body {
     margin: 0;
     padding: 0;
+    font-size: 10px;
   }
   *{
       box-sizing: border-box;
       font-family: 'Lato', sans-serif;
+      
   }
 `;
 
@@ -45,6 +48,7 @@ function App() {
             <GlobalStyles />
             <LangContext.Provider value={language}>
                 <Navbar toggleLanguage={toggleLanguage} />
+                <FirstSection />
             </LangContext.Provider>
         </>
     );

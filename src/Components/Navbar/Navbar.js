@@ -101,6 +101,7 @@ const CloseIcon = styled(motion.img)`
     cursor: pointer;
     width: 30px;
     height: 30px;
+    z-index: 99;
 `;
 const Main = styled.div`
     display: flex;
@@ -116,6 +117,7 @@ const Title = styled.h2`
     padding: 0;
     color: white;
     margin-left: 8vw;
+    font-size: 2rem;
 `;
 
 const HamburgerIcon = styled(motion.img)`
@@ -136,6 +138,7 @@ const Menu = styled(motion.div)`
 `;
 const Aside = styled(motion.aside)`
     position: absolute;
+    z-index: 98;
     right: 0;
     top: 0;
     border-left: 1px solid white;
@@ -147,4 +150,6 @@ const Items = styled(motion.h4)`
     color: white;
     display: inline-block;
     text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
 `;
