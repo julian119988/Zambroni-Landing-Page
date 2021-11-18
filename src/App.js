@@ -3,6 +3,7 @@ import { lang, LangContext } from "./lang";
 import { createGlobalStyle } from "styled-components";
 import Navbar from "./Components/Navbar/Navbar";
 import FirstSection from "./Components/FirstSection/FirstSection";
+import StackSection from "./Components/StackSection/StackSection";
 
 const GlobalStyles = createGlobalStyle`
   html,body {
@@ -49,6 +50,7 @@ function App() {
             <LangContext.Provider value={language}>
                 <Navbar toggleLanguage={toggleLanguage} />
                 <FirstSection />
+                <StackSection />
             </LangContext.Provider>
         </>
     );

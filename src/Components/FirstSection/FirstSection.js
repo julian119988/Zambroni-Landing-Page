@@ -58,6 +58,7 @@ const Main = styled.div`
     background-color: black;
     padding-bottom: 4vh;
     padding-top: 3vh;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 const TitleSection = styled.div`
     display: flex;
