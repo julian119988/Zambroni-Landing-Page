@@ -35,6 +35,40 @@ export const lang = {
                 },
             },
         },
+        stackSection: {
+            title: "Tecnologías que utilizo",
+        },
+        proyectsSection: {
+            title: "Trabajos y proyectos",
+            works: [
+                {
+                    title: "MehrCare",
+                    description:
+                        "Landing page de una nueva empresa de work & travel para enfermeros.",
+                    github: "https://github.com/julian119988/MehrCare",
+                    link: "https://mehr-care.vercel.app/",
+                },
+                {
+                    title: "Agenmap",
+                    description:
+                        "Aplicación web para buscar alojamiento vacacional.",
+                    github: "https://github.com/julian119988/agenmap-client",
+                    link: "https://agenmap-client.vercel.app/",
+                },
+                {
+                    title: "EcotiendaIPUUM",
+                    description:
+                        "Aplicación de gestión integral desarrollada con React, NodeJS (express), MongoDB y Electron.",
+                    github: "https://github.com/julian119988/ecotienda-ipuum",
+                },
+                {
+                    title: "Barra interactiva",
+                    description: "Barra interactiva hecha con React y Sass.",
+                    github: "https://github.com/julian119988/interactive-pricing-challenge",
+                    link: "https://interactive-princing.netlify.app/",
+                },
+            ],
+        },
     },
     en: {
         nav: {
@@ -71,6 +105,41 @@ export const lang = {
                     JS | 08/2020 - 02/2021`,
                 },
             },
+        },
+        stackSection: {
+            title: "Tech stack",
+        },
+        proyectsSection: {
+            title: "Works and projects",
+            works: [
+                {
+                    title: "MehrCare",
+                    description:
+                        "Landing page of a new work & travel company made with Reactjs.",
+                    github: "https://github.com/julian119988/MehrCare",
+                    link: "https://mehr-care.vercel.app/",
+                },
+                {
+                    title: "Agenmap",
+                    description:
+                        "Website created for people looking for vacation rental accommodation.",
+                    github: "https://github.com/julian119988/agenmap-client",
+                    link: "https://agenmap-client.vercel.app/",
+                },
+                {
+                    title: "EcotiendaIPUUM",
+                    description:
+                        "Business management application for desktop made with React, NodeJS (express), MongoDB and Electron.",
+                    github: "https://github.com/julian119988/ecotienda-ipuum",
+                },
+                {
+                    title: "Interactive pricing bar",
+                    description:
+                        "Interactive pricing bar made with React and Sass.",
+                    github: "https://github.com/julian119988/interactive-pricing-challenge",
+                    link: "https://interactive-princing.netlify.app/",
+                },
+            ],
         },
     },
 };

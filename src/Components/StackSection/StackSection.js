@@ -18,8 +18,11 @@ import es6Icon from "../../assets/icons/stackIcons/es6Icon.png";
 import electron from "../../assets/icons/stackIcons/electronIcon.png";
 import reduxIcon from "../../assets/icons/stackIcons/reduxIcon.png";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { LangContext } from "../../lang";
 
 const StackSection = () => {
+    const { stackSection } = useContext(LangContext);
     const blackCircleVariants = {
         static1: {
             transition: {
@@ -186,7 +189,7 @@ const StackSection = () => {
     };
     return (
         <Main>
-            <Title>Tecnologías que utilizo</Title>
+            <Title>{stackSection.title}</Title>
             <StackIconsGrid>
                 <BlackCircle
                     variants={blackCircleVariants}
@@ -306,6 +309,7 @@ const Main = styled.div`
     flex-direction: column;
     padding-left: 8vw;
     padding-right: 8vw;
+    margin-bottom: 5vh;
 `;
 
 const Title = styled.h3`

@@ -4,6 +4,8 @@ import { createGlobalStyle } from "styled-components";
 import Navbar from "./Components/Navbar/Navbar";
 import FirstSection from "./Components/FirstSection/FirstSection";
 import StackSection from "./Components/StackSection/StackSection";
+import WorkSection from "./Components/WorkSection/WorkSection";
+import Footer from "./Components/Footer/Footer";
 
 const GlobalStyles = createGlobalStyle`
   html,body {
@@ -51,6 +53,8 @@ function App() {
                 <Navbar toggleLanguage={toggleLanguage} />
                 <FirstSection />
                 <StackSection />
+                <WorkSection />
+                <Footer />
             </LangContext.Provider>
         </>
     );
