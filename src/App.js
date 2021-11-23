@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { lang, LangContext } from "./lang";
 import { createGlobalStyle } from "styled-components";
 import Navbar from "./Components/Navbar/Navbar";
@@ -16,12 +16,26 @@ const GlobalStyles = createGlobalStyle`
   *{
       box-sizing: border-box;
       font-family: 'Lato', sans-serif;
-      
+      scroll-behavior: smooth;
   }
+  .lock-scroll-on {
+    overflow: hidden;
+}
+.lock-scroll-off {
+    overflow: visible;
+}
 `;
 
 function App() {
     const [language, setLanguaje] = useState(lang.es);
+    const workRef = useRef();
+    const techRef = useRef();
+    const contactRef = useRef();
+    const refs = {
+        contactRef: contactRef,
+        techRef: techRef,
+        workRef: workRef,
+    };
     useEffect(() => {
         const savedLang = localStorage.getItem("zambroniLang");
         if (!savedLang) {
@@ -50,11 +64,11 @@ function App() {
         <>
             <GlobalStyles />
             <LangContext.Provider value={language}>
-                <Navbar toggleLanguage={toggleLanguage} />
+                <Navbar toggleLanguage={toggleLanguage} refs={refs} />
                 <FirstSection />
-                <StackSection />
-                <WorkSection />
-                <Footer />
+                <StackSection techRef={techRef} />
+                <WorkSection workRef={workRef} />
+                <Footer contactRef={contactRef} />
             </LangContext.Provider>
         </>
     );

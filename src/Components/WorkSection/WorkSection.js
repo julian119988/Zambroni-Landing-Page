@@ -2,10 +2,10 @@ import styled from "styled-components";
 import ProyectCard from "./ProyectCard";
 import { LangContext } from "../../lang";
 import { useContext } from "react";
-const WorkSection = () => {
+const WorkSection = (props) => {
     const { proyectsSection } = useContext(LangContext);
     return (
-        <Main>
+        <Main ref={props.workRef}>
             <Title>{proyectsSection.title}</Title>
             <ProyectsGrid>
                 {proyectsSection.works.map((project, index) => (

@@ -21,7 +21,7 @@ import { motion } from "framer-motion";
 import { useContext } from "react";
 import { LangContext } from "../../lang";
 
-const StackSection = () => {
+const StackSection = (props) => {
     const { stackSection } = useContext(LangContext);
     const blackCircleVariants = {
         static1: {
@@ -188,7 +188,7 @@ const StackSection = () => {
         },
     };
     return (
-        <Main>
+        <Main ref={props.techRef}>
             <Title>{stackSection.title}</Title>
             <StackIconsGrid>
                 <BlackCircle

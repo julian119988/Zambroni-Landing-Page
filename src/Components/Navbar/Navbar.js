@@ -30,6 +30,10 @@ export default function Navbar(props) {
         },
         open: { opacity: 1 },
     };
+
+    const scrollToElement = (element) => {
+        window.scrollTo({ behavior: "smooth", top: element.offsetTop });
+    };
     return (
         <Main>
             <Title>Julian Zambroni</Title>
@@ -38,7 +42,10 @@ export default function Navbar(props) {
                 whileTap={{ scale: 0.9, boxShadow: "0px 0px 10px 3px white" }}
                 src={hamburgerIcon}
                 alt="Icon to open de menu"
-                onClick={cycleOpen}
+                onClick={() => {
+                    document.body.classList.toggle("lock-scroll-on");
+                    cycleOpen();
+                }}
             />
             <AnimatePresence>
                 {open && (
@@ -68,7 +75,12 @@ export default function Navbar(props) {
                                 key="6"
                                 src={crossIcon}
                                 alt="Cross icon to close menu"
-                                onClick={cycleOpen}
+                                onClick={() => {
+                                    document.body.classList.toggle(
+                                        "lock-scroll-off"
+                                    );
+                                    cycleOpen();
+                                }}
                                 variants={itemVariants}
                             />
                             <Items
@@ -78,22 +90,104 @@ export default function Navbar(props) {
                             >
                                 {nav.lang}
                             </Items>
-                            <Items key="3" variants={itemVariants}>
+                            <Items
+                                key="3"
+                                variants={itemVariants}
+                                onClick={() => {
+                                    const workElement =
+                                        props.refs.workRef.current;
+                                    cycleOpen();
+                                    document.body.classList.toggle(
+                                        "lock-scroll-off"
+                                    );
+                                    scrollToElement(workElement);
+                                }}
+                            >
                                 {nav.work}
                             </Items>
-                            <Items key="4" variants={itemVariants}>
+                            <Items
+                                key="4"
+                                variants={itemVariants}
+                                onClick={() => {
+                                    const workElement =
+                                        props.refs.techRef.current;
+                                    cycleOpen();
+                                    document.body.classList.toggle(
+                                        "lock-scroll-off"
+                                    );
+                                    scrollToElement(workElement);
+                                }}
+                            >
                                 {nav.tech}
                             </Items>
-                            <Items key="5" variants={itemVariants}>
+                            <Items
+                                key="5"
+                                variants={itemVariants}
+                                onClick={() => {
+                                    const workElement =
+                                        props.refs.contactRef.current;
+                                    cycleOpen();
+                                    document.body.classList.toggle(
+                                        "lock-scroll-off"
+                                    );
+                                    scrollToElement(workElement);
+                                }}
+                            >
                                 {nav.contact}
                             </Items>
                         </Menu>
                     </Aside>
                 )}
             </AnimatePresence>
+            <NavItemsDiv>
+                <NavItem onClick={toggleLanguage}>{nav.lang}</NavItem>
+                <NavItem
+                    onClick={() => {
+                        const workElement = props.refs.workRef.current;
+                        scrollToElement(workElement);
+                    }}
+                >
+                    {nav.work}
+                </NavItem>
+                <NavItem
+                    onClick={() => {
+                        const workElement = props.refs.techRef.current;
+                        scrollToElement(workElement);
+                    }}
+                >
+                    {nav.tech}
+                </NavItem>
+                <NavItem
+                    onClick={() => {
+                        const workElement = props.refs.contactRef.current;
+                        scrollToElement(workElement);
+                    }}
+                >
+                    {nav.contact}
+                </NavItem>
+            </NavItemsDiv>
         </Main>
     );
 }
+
+const NavItem = styled.a`
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 15px 10px 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 2vh;
+    align-items: center;
+    transition: all 0.35s ease-in-out;
+    cursor: pointer;
+    flex-direction: column;
+    position: relative;
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+`;
 const CloseIcon = styled(motion.img)`
     position: absolute;
     top: 8vh;
@@ -110,6 +204,9 @@ const Main = styled.div`
     height: 10vh;
     align-items: center;
     position: relative;
+    @media (min-width: 800px) {
+        padding-top: 2vh;
+    }
 `;
 
 const Title = styled.h2`
@@ -118,12 +215,29 @@ const Title = styled.h2`
     color: white;
     margin-left: 8vw;
     font-size: 2rem;
+    @media (min-width: 800px) {
+        margin-left: 15vw;
+    }
 `;
 
 const HamburgerIcon = styled(motion.img)`
     margin-left: auto;
     margin-right: 8vw;
     cursor: pointer;
+    @media (min-width: 800px) {
+        display: none;
+    }
+`;
+
+const NavItemsDiv = styled.div`
+    display: none;
+    @media (min-width: 800px) {
+        display: flex;
+        flex-direction: row;
+        color: white;
+        margin-left: auto;
+        margin-right: 15vw;
+    }
 `;
 
 const Menu = styled(motion.div)`

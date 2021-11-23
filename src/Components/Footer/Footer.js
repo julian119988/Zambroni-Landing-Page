@@ -2,9 +2,9 @@ import styled from "styled-components";
 import linkedinIcon from "../../assets/icons/linkedin.png";
 import mailIcon from "../../assets/icons/mail.png";
 import githubIcon from "../../assets/icons/github.png";
-const Footer = () => {
+const Footer = (props) => {
     return (
-        <Main>
+        <Main ref={props.contactRef}>
             <PrettyHr />
             <CopyRightText>
                 © 2021 Julian Zambroni. All rights reserved.
