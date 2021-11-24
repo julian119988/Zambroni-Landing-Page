@@ -50,6 +50,9 @@ const CopyRightText = styled.p`
     color: white;
     text-align: center;
     margin: 3vh 0 3vh 0;
+    @media (min-width: 800px) {
+        font-size: 1.3rem;
+    }
 `;
 
 const SocialMediaIconsDiv = styled.div`

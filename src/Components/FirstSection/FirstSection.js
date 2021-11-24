@@ -13,44 +13,57 @@ const FirstSection = () => {
                 <ProfilePic src={profilePic} alt="Profile picture" />
                 <TitleTextSection>
                     <Title>{titleSection.title}</Title>
-                    <Text style={{ marginTop: ".3vh", fontSize: "1.2rem" }}>
+                    <Text style={{ marginTop: ".3vh" }}>
                         {titleSection.text}
                     </Text>
                 </TitleTextSection>
             </TitleSection>
-            <BioSection>
-                <Title>{bioSection.title}</Title>
-                <Text>{bioSection.text}</Text>
-            </BioSection>
-            <StudiesAndCourses>
-                <Title>{studiesSection.title}</Title>
-                <StudiesAndCoursesList>
-                    <ItemList>
-                        <Text style={{ margin: "0" }}>
-                            {studiesSection.item1.institution}
-                        </Text>
-                        <Text style={{ margin: "0" }}>
-                            {studiesSection.item1.course}
-                        </Text>
-                    </ItemList>
-                    <ItemList>
-                        <Text> {studiesSection.item2.institution} </Text>
-                        <Text style={{ margin: "0" }}>
-                            {studiesSection.item2.course}
-                        </Text>
-                    </ItemList>
-                    <ItemList>
-                        <Text>{studiesSection.item3.institution}</Text>
-                        <Text style={{ margin: "0" }}>
-                            {studiesSection.item3.course}
-                        </Text>
-                    </ItemList>
-                </StudiesAndCoursesList>
-            </StudiesAndCourses>
+            <AdaptWidth>
+                <BioSection>
+                    <Title>{bioSection.title}</Title>
+                    <Text>{bioSection.text}</Text>
+                </BioSection>
+                <StudiesAndCourses>
+                    <Title>{studiesSection.title}</Title>
+                    <StudiesAndCoursesList>
+                        <ItemList>
+                            <Text style={{ margin: "0" }}>
+                                {studiesSection.item1.institution}
+                            </Text>
+                            <Text style={{ margin: "0" }}>
+                                {studiesSection.item1.course}
+                            </Text>
+                        </ItemList>
+                        <ItemList>
+                            <Text> {studiesSection.item2.institution} </Text>
+                            <Text style={{ margin: "0" }}>
+                                {studiesSection.item2.course}
+                            </Text>
+                        </ItemList>
+                        <ItemList>
+                            <Text>{studiesSection.item3.institution}</Text>
+                            <Text style={{ margin: "0" }}>
+                                {studiesSection.item3.course}
+                            </Text>
+                        </ItemList>
+                    </StudiesAndCoursesList>
+                </StudiesAndCourses>
+            </AdaptWidth>
         </Main>
     );
 };
 export default FirstSection;
+
+const AdaptWidth = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @media (min-width: 1000px) {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 3vh;
+    }
+`;
 
 const Main = styled.div`
     display: flex;
@@ -68,11 +81,17 @@ const TitleSection = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 4vh;
+    @media (min-width: 800px) {
+        padding-left: 24vw;
+        padding-right: 24vw;
+        margin-top: 3vh;
+        margin-bottom: 10vh;
+    }
 `;
 const ProfilePic = styled.img`
     min-width: 150px;
     width: 40vw;
-    max-width: 300px;
+    max-width: 250px;
     aspect-ratio: 1;
 `;
 const TitleTextSection = styled.div`
@@ -87,6 +106,9 @@ const Title = styled.h3`
     color: white;
     font-size: 2rem;
     font-weight: normal;
+    @media (min-width: 800px) {
+        font-size: 2.5rem;
+    }
 `;
 const Text = styled.p`
     margin: 0;
@@ -96,6 +118,9 @@ const Text = styled.p`
     color: white;
     margin-top: 1.4vh;
     max-width: 40ch;
+    @media (min-width: 800px) {
+        font-size: 1.5rem;
+    }
 `;
 const BioSection = styled.div`
     display: flex;
@@ -103,12 +128,19 @@ const BioSection = styled.div`
     padding-left: 8vw;
     padding-right: 8vw;
     margin-bottom: 3.8vh;
+    @media (min-width: 1000px) {
+        padding: 0;
+        margin-right: 10vw;
+    }
 `;
 const StudiesAndCourses = styled.div`
     padding-left: 8vw;
     padding-right: 8vw;
     display: flex;
     flex-direction: column;
+    @media (min-width: 1000px) {
+        padding: 0;
+    }
 `;
 const StudiesAndCoursesList = styled.ul`
     padding-left: 4vw;
@@ -129,5 +161,19 @@ const ItemList = styled.li`
         background-repeat: no-repeat;
         position: absolute;
         left: 0;
+    }
+    @media (min-width: 800px) {
+        &:before {
+            content: "";
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            background-image: url(${bookIcon});
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 1vw;
+            margin-top: 3px;
+        }
     }
 `;

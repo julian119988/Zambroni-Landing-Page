@@ -135,6 +135,25 @@ export default function Navbar(props) {
                             >
                                 {nav.contact}
                             </Items>
+                            <Items
+                                key="5"
+                                variants={itemVariants}
+                                onClick={() => {
+                                    cycleOpen();
+                                    document.body.classList.toggle(
+                                        "lock-scroll-off"
+                                    );
+                                    window.open(
+                                        `${
+                                            (window.location.href +
+                                                "es-curriculum-julian-zambroni.pdf",
+                                            "es-curriculum-julian-zambroni.pdf")
+                                        }`
+                                    );
+                                }}
+                            >
+                                Curriculum
+                            </Items>
                         </Menu>
                     </Aside>
                 )}
@@ -165,6 +184,15 @@ export default function Navbar(props) {
                 >
                     {nav.contact}
                 </NavItem>
+                <NavItem
+                    target="_blank"
+                    href={
+                        window.location.href +
+                        "es-curriculum-julian-zambroni.pdf"
+                    }
+                >
+                    Curriculum
+                </NavItem>
             </NavItemsDiv>
         </Main>
     );
@@ -183,6 +211,19 @@ const NavItem = styled.a`
     cursor: pointer;
     flex-direction: column;
     position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-decoration: none;
+    @media (min-width: 800px) {
+        font-size: 1.5rem;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    @media (min-width: 1100px) {
+        font-size: 1.7rem;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
     &:hover {
         background-color: white;
         color: black;
@@ -216,7 +257,12 @@ const Title = styled.h2`
     margin-left: 8vw;
     font-size: 2rem;
     @media (min-width: 800px) {
+        font-size: 3rem;
+        margin-left: 5vw;
+    }
+    @media (min-width: 1200px) {
         margin-left: 15vw;
+        font-size: 3rem;
     }
 `;
 
@@ -232,10 +278,14 @@ const HamburgerIcon = styled(motion.img)`
 const NavItemsDiv = styled.div`
     display: none;
     @media (min-width: 800px) {
+        font-size: 3rem;
         display: flex;
         flex-direction: row;
         color: white;
         margin-left: auto;
+        margin-right: 5vw;
+    }
+    @media (min-width: 1200px) {
         margin-right: 15vw;
     }
 `;
@@ -248,7 +298,7 @@ const Menu = styled(motion.div)`
     height: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 38vh 0 38vh 0;
+    padding: 30vh 0 30vh 0;
 `;
 const Aside = styled(motion.aside)`
     position: absolute;

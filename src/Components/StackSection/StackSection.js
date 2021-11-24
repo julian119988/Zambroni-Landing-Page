@@ -26,7 +26,8 @@ const StackSection = (props) => {
     const blackCircleVariants = {
         static1: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 0,
@@ -35,7 +36,8 @@ const StackSection = (props) => {
         },
         static2: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 0.1,
@@ -44,7 +46,8 @@ const StackSection = (props) => {
         },
         static3: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 0.2,
@@ -53,7 +56,8 @@ const StackSection = (props) => {
         },
         static4: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 0.3,
@@ -62,7 +66,8 @@ const StackSection = (props) => {
         },
         static5: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 0.4,
@@ -71,7 +76,8 @@ const StackSection = (props) => {
         },
         static6: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 0.5,
@@ -80,7 +86,8 @@ const StackSection = (props) => {
         },
         static7: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 0.6,
@@ -89,7 +96,8 @@ const StackSection = (props) => {
         },
         static8: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 0.7,
@@ -98,7 +106,8 @@ const StackSection = (props) => {
         },
         static9: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 0.8,
@@ -107,7 +116,8 @@ const StackSection = (props) => {
         },
         static10: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 0.9,
@@ -116,7 +126,8 @@ const StackSection = (props) => {
         },
         static11: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 1,
@@ -125,7 +136,8 @@ const StackSection = (props) => {
         },
         static12: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 1.1,
@@ -134,7 +146,8 @@ const StackSection = (props) => {
         },
         static13: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 1.2,
@@ -143,7 +156,8 @@ const StackSection = (props) => {
         },
         static14: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 1.3,
@@ -152,7 +166,8 @@ const StackSection = (props) => {
         },
         static15: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 1.4,
@@ -161,7 +176,8 @@ const StackSection = (props) => {
         },
         static16: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 1.5,
@@ -170,7 +186,8 @@ const StackSection = (props) => {
         },
         static17: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 1.6,
@@ -179,7 +196,8 @@ const StackSection = (props) => {
         },
         static18: {
             transition: {
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut",
                 duration: 1.2,
                 delay: 1.7,
@@ -319,6 +337,12 @@ const Title = styled.h3`
     font-weight: normal;
     margin-top: 3vh;
     margin-bottom: 4vh;
+    @media (min-width: 800px) {
+        margin-left: 6vw;
+        font-size: 2.5rem;
+        margin-top: 5vh;
+        margin-bottom: 6vh;
+    }
 `;
 
 const StackIconsGrid = styled.div`

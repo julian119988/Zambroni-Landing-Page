@@ -48,8 +48,8 @@ const Main = styled.div`
     box-shadow: inset 0px 0px 4px 3px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
     max-width: 150px;
-    height: 180px;
     width: 35vw;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,6 +60,9 @@ const Title = styled.h3`
     margin-left: 3vw;
     margin-right: 3vw;
     text-align: center;
+    @media (min-width: 800px) {
+        font-size: 1.7rem;
+    }
 `;
 
 const Description = styled.p`
@@ -68,6 +71,9 @@ const Description = styled.p`
     padding-left: 8%;
     padding-right: 8%;
     font-size: 1rem;
+    @media (min-width: 800px) {
+        font-size: 1.3rem;
+    }
 `;
 
 const LinksSection = styled.div`

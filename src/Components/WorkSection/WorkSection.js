@@ -41,6 +41,12 @@ const Title = styled.h2`
     font-weight: normal;
     margin-bottom: 3vh;
     font-size: 1.7rem;
+    @media (min-width: 800px) {
+        font-size: 2.5rem;
+        margin-left: 6vw;
+        margin-top: 2vh;
+        margin-bottom: 5vh;
+    }
 `;
 
 const ProyectsGrid = styled.div`
